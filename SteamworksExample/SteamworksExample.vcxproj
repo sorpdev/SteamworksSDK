@@ -29,28 +29,28 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <TargetName>steamworksexample</TargetName>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <ProtobufVersion>3.15.3</ProtobufVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <TargetName>steamworksexample</TargetName>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <ProtobufVersion>3.15.3</ProtobufVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <TargetName>steamworksexample</TargetName>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <ProtobufVersion>3.15.3</ProtobufVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <TargetName>steamworksexample</TargetName>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <ProtobufVersion>3.15.3</ProtobufVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -271,6 +271,11 @@
     <Xdcmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Xdcmake>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)..\public\steam\lib\win64\sdkencryptedappticket64.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)..\redistributable_bin\win64\steam_api64.dll" "$(TargetDir)"
+echo 480 &gt; "$(TargetDir)steam_appid.txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PreBuildEvent>
@@ -440,6 +445,11 @@
     <Xdcmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Xdcmake>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)..\public\steam\lib\win64\sdkencryptedappticket64.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)..\redistributable_bin\win64\steam_api64.dll" "$(TargetDir)"
+echo 480 &gt; "$(TargetDir)steam_appid.txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
