@@ -406,5 +406,5 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
 
-/steamworksexample/win64/* 
-#x86 unsupported
+# Build Outputs (x86 unsupported)
+steamworksexample/win64/*
