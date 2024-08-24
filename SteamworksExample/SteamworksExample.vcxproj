@@ -23,6 +23,7 @@
     <ProjectName>steamworksexample</ProjectName>
     <ProjectGuid>{FC177B29-2631-C58B-D723-530DA88155B4}</ProjectGuid>
     <DefaultLanguage>en-US</DefaultLanguage>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,10 +107,10 @@
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)win64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\win64-$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)win64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\Build\win64-$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
@@ -648,6 +649,7 @@ echo 480 &gt; "$(TargetDir)steam_appid.txt"</Command>
     </Library>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.gitignore" />
     <None Include="gameengineosx.mm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

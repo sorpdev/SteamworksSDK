@@ -314,6 +314,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.gitignore" />
   </ItemGroup>
   <ItemGroup>
     <None Include="gameengineosx.mm">
